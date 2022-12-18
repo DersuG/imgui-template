@@ -110,10 +110,12 @@ int main(int, char**)
         ImGui::NewFrame();
 
         // 2. Show a simple window that we create ourselves. We use a Begin/End pair to create a named window.
+        ImGuiViewport * viewport = ImGui::GetMainViewport();
+        ImGui::SetNextWindowPos(viewport->WorkPos);
+        ImGui::SetNextWindowSize(viewport->WorkSize);
+        ImGui::Begin("Hello, world!", NULL, ImGuiWindowFlags_NoDecoration | ImGuiWindowFlags_NoResize);                          // Create a window called "Hello, world!" and append into it.
         {
             static int counter = 0;
-
-            ImGui::Begin("Hello, world!");                          // Create a window called "Hello, world!" and append into it.
 
             ImGui::Text("This is some useful text.");               // Display some text (you can use a format strings too)
 
@@ -125,8 +127,8 @@ int main(int, char**)
             ImGui::Text("counter = %d", counter);
 
             ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
-            ImGui::End();
         }
+        ImGui::End();
 
         // Rendering
         ImGui::Render();

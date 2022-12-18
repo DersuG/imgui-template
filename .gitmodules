@@ -4,3 +4,9 @@
 [submodule "dependencies/imgui/imgui"]
 	path = dependencies/imgui/imgui
 	url = https://github.com/ocornut/imgui.git
+[submodule "dependencies/implot/implot"]
+	path = dependencies/implot/implot
+	url = https://github.com/epezent/implot.git
+[submodule "dependencies/--force"]
+	path = dependencies/--force
+	url = https://github.com/glfw/glfw.git
